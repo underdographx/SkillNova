@@ -7,18 +7,13 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return jsonify({
-        "message": "SkillNova Backend Running 🚀"
-    })
+    return jsonify({"message":"SkillNova Backend Running 🚀"})
 
 @app.route("/recommend", methods=["POST"])
 def recommend():
     data = request.get_json()
-
     if not data or "skills" not in data:
-        return jsonify({
-            "error": "No skills provided."
-        }), 400
+        return jsonify({"error":"No skills provided"}),400
 
     recommendations = generate_recommendations(data["skills"])
 
@@ -28,4 +23,4 @@ def recommend():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
