@@ -1,0 +1,30 @@
+/* ==============================
+   HOME PAGE (Vertical Layout)
+   ============================== */
+.home-page {
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* Reverting back to sequential full-width sections for a neater row-wise layout */
+.home-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.home-section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.home-section-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}

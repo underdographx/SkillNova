@@ -1,0 +1,143 @@
+CAREER_DATABASE = [
+
+    {
+        "id": 1,
+        "name": "AI Engineer",
+        "description": "Develop intelligent systems using Artificial Intelligence and Machine Learning.",
+        "skills": ["python", "ai", "machine learning", "deep learning", "tensorflow", "pytorch", "data science", "numpy", "pandas"]
+    },
+
+    {
+        "id": 2,
+        "name": "Machine Learning Engineer",
+        "description": "Build and deploy machine learning models for real-world applications.",
+        "skills": ["python", "machine learning", "tensorflow", "pytorch", "scikit-learn", "statistics", "data science", "numpy"]
+    },
+
+    {
+        "id": 3,
+        "name": "Data Scientist",
+        "description": "Extract insights from large datasets using statistical and AI techniques.",
+        "skills": ["python", "sql", "statistics", "machine learning", "data science", "pandas", "numpy", "power bi"]
+    },
+
+    {
+        "id": 4,
+        "name": "Data Analyst",
+        "description": "Analyze business data and generate meaningful insights.",
+        "skills": ["python", "sql", "excel", "statistics", "tableau", "power bi", "data visualization"]
+    },
+
+    {
+        "id": 5,
+        "name": "Business Analyst",
+        "description": "Bridge business needs with technology solutions.",
+        "skills": ["sql", "excel", "communication", "power bi", "tableau", "analysis"]
+    },
+
+    {
+        "id": 6,
+        "name": "Software Engineer",
+        "description": "Design, develop and maintain software applications.",
+        "skills": ["java", "python", "c++", "git", "github", "algorithms", "data structures"]
+    },
+
+    {
+        "id": 7,
+        "name": "Frontend Developer",
+        "description": "Build beautiful and responsive web interfaces.",
+        "skills": ["html", "css", "javascript", "react", "figma", "ui", "responsive design"]
+    },
+
+    {
+        "id": 8,
+        "name": "Backend Developer",
+        "description": "Develop APIs and scalable server-side applications.",
+        "skills": ["python", "flask", "django", "sql", "mongodb", "api", "backend"]
+    },
+
+    {
+        "id": 9,
+        "name": "Full Stack Developer",
+        "description": "Build complete web applications from frontend to backend.",
+        "skills": ["html", "css", "javascript", "react", "node.js", "flask", "sql", "mongodb"]
+    },
+
+    {
+        "id": 10,
+        "name": "Mobile App Developer",
+        "description": "Develop Android and iOS applications.",
+        "skills": ["java", "kotlin", "flutter", "react native", "firebase", "android"]
+    },
+
+    {
+        "id": 11,
+        "name": "DevOps Engineer",
+        "description": "Automate deployment pipelines and cloud infrastructure.",
+        "skills": ["docker", "kubernetes", "linux", "aws", "git", "github", "ci/cd"]
+    },
+
+    {
+        "id": 12,
+        "name": "Cloud Engineer",
+        "description": "Build and manage scalable cloud infrastructure.",
+        "skills": ["aws", "azure", "gcp", "linux", "docker", "kubernetes"]
+    },
+
+    {
+        "id": 13,
+        "name": "Cybersecurity Analyst",
+        "description": "Protect systems and networks from cyber threats.",
+        "skills": ["cybersecurity", "ethical hacking", "linux", "network security", "security"]
+    },
+
+    {
+        "id": 14,
+        "name": "Network Engineer",
+        "description": "Design and maintain secure computer networks.",
+        "skills": ["networking", "linux", "security", "routers", "switches"]
+    },
+
+    {
+        "id": 15,
+        "name": "Database Administrator",
+        "description": "Manage and optimize database systems.",
+        "skills": ["sql", "mysql", "postgresql", "mongodb", "database"]
+    },
+
+    {
+        "id": 16,
+        "name": "UI/UX Designer",
+        "description": "Create engaging digital experiences and user interfaces.",
+        "skills": ["figma", "ui", "ux", "wireframing", "prototyping", "design thinking"]
+    },
+
+    {
+        "id": 17,
+        "name": "Game Developer",
+        "description": "Develop interactive games for desktop and mobile platforms.",
+        "skills": ["c++", "unity", "unreal", "game development", "graphics"]
+    },
+
+    {
+        "id": 18,
+        "name": "Blockchain Developer",
+        "description": "Build decentralized blockchain applications.",
+        "skills": ["solidity", "ethereum", "web3", "blockchain", "smart contracts"]
+    },
+
+    {
+        "id": 19,
+        "name": "Embedded Systems Engineer",
+        "description": "Develop software for hardware and IoT devices.",
+        "skills": ["c", "c++", "embedded", "microcontrollers", "arduino"]
+    },
+
+    {
+        "id": 20,
+        "name": "QA Engineer",
+        "description": "Ensure software quality through manual and automated testing.",
+        "skills": ["testing", "selenium", "automation", "java", "python", "qa"]
+    }
+
+]

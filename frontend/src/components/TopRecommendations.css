@@ -1,0 +1,113 @@
+/* ==============================
+   TOP RECOMMENDATIONS (Wide Mode)
+   ============================== */
+.rec-panel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === RECOMMENDATION CARDS === */
+.rec-cards-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.rec-panel-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  animation: slideUp 0.4s ease both;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.rec-panel-card:hover {
+  border-color: var(--primary-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.rec-panel-card.top-match {
+  border-color: var(--primary-border);
+  background: linear-gradient(135deg, rgba(255, 42, 122, 0.05) 0%, var(--card) 100%);
+}
+
+.rec-panel-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.rec-panel-card.top-match .rec-panel-icon {
+  border-color: var(--primary);
+  background: var(--primary-dim);
+}
+
+.rec-panel-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rec-panel-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rec-panel-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.rec-panel-meta strong {
+  color: var(--primary);
+}
+
+.rec-panel-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rec-panel-score-val {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.rec-panel-score-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .rec-cards-list {
+    grid-template-columns: 1fr;
+  }
+}

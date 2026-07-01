@@ -1,0 +1,136 @@
+/* ==============================
+   FOOTER (FloraAI Theme)
+   ============================== */
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-deep);
+  padding: 80px 0 32px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.footer-logo-icon {
+  width: 32px;
+  height: 32px;
+}
+.footer-logo-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.footer-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-link:hover {
+  color: var(--primary);
+}
+
+.footer-badge {
+  background: var(--primary-dim);
+  border: 1px solid var(--primary-border);
+  color: var(--primary);
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+.footer-socials a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.footer-socials a:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 540px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+@media (max-width: 540px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
