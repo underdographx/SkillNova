@@ -1,4 +1,4 @@
-from backend.careers import CAREER_DATABASE
+from careers import CAREER_DATABASE
 
 
 def build_user_profile(selected_skills):
