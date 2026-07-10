@@ -1,148 +1,140 @@
-/* ==============================
-   HOW IT WORKS / PIPELINE (FloraAI)
-   ============================== */
 .hiw-section {
-  padding: 80px 0;
+  padding: 40px 0;
+}
+
+.hiw-container-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
   position: relative;
+  overflow: hidden;
 }
 
-.hiw-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.hiw-section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary);
-  background: var(--primary-dim);
-  border: 1px solid var(--primary-border);
-  border-radius: 100px;
-  padding: 5px 14px;
-  margin-bottom: 16px;
+/* Hot pink bottom border accent */
+.hiw-container-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7b2ff7, #e91e8c, transparent);
 }
 
 .hiw-title {
-  font-size: clamp(26px, 3.5vw, 36px);
-  font-weight: 800;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 48px;
   color: var(--text);
-  letter-spacing: -0.03em;
-  margin-bottom: 10px;
 }
 
-.hiw-sub {
-  font-size: 15px;
-  color: var(--text-muted);
+/* Pink gradient underline on title */
+.hiw-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #e91e8c, #7b2ff7);
+  border-radius: 999px;
+  margin: 10px auto 0;
 }
 
-.hiw-steps {
+.hiw-steps-grid {
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: flex-start;
+  justify-content: space-between;
   position: relative;
+  gap: 16px;
 }
 
-.hiw-step {
-  flex: 1;
+/* Connecting dashed line */
+.hiw-steps-grid::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  border-top: 1px dashed rgba(233, 30, 140, 0.35);
+  z-index: 1;
+}
+
+.hiw-step-card {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
-  padding: 28px 16px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  position: relative;
-  transition: transform var(--transition-med), border-color var(--transition-med), box-shadow var(--transition-med);
-  cursor: default;
-}
-.hiw-step:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary-border);
-  box-shadow: 0 12px 40px rgba(255, 138, 61, 0.08);
-}
-.hiw-step:hover .hiw-step-icon-wrap {
-  background: var(--primary-dim);
-  border-color: var(--primary-border);
+  flex: 1;
+  max-width: 200px;
 }
 
-.hiw-step-number {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 26px;
-  background: var(--primary);
-  color: #070B14;
+.hiw-step-num {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  font-size: 11px;
-  font-weight: 800;
+  background: var(--bg-deep);
+  border: 1px solid rgba(233, 30, 140, 0.5);
+  color: #e91e8c;
+  font-size: 13px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(255, 138, 61, 0.3);
+  margin-bottom: 16px;
+  box-shadow: 0 0 12px rgba(233, 30, 140, 0.15);
 }
-
-.hiw-step-icon-wrap {
-  width: 52px;
-  height: 52px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition), border-color var(--transition);
-  margin-top: 6px;
-  color: var(--primary);
-}
-
-.hiw-step-content { display: flex; flex-direction: column; gap: 5px; }
 
 .hiw-step-title {
   font-size: 14px;
   font-weight: 700;
   color: var(--text);
+  margin-bottom: 8px;
 }
 
 .hiw-step-desc {
-  font-size: 12.5px;
-  color: var(--text-secondary);
+  font-size: 13px;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
-/* Animated arrow connector */
-.hiw-arrow {
-  width: 48px;
-  flex-shrink: 0;
+/* Between-step icons */
+.hiw-connector-icon {
+  position: relative;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(233, 30, 140, 0.08);
+  border: 1px solid rgba(233, 30, 140, 0.25);
+  color: #e91e8c;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  flex-shrink: 0;
 }
 
-.hiw-arrow-svg {
-  color: var(--primary);
-  opacity: 0.6;
+.hiw-connector-icon svg {
+  width: 14px;
+  height: 14px;
 }
 
-.hiw-arrow-svg path {
-  stroke-dasharray: 5 4;
-  animation: dash 1.5s linear infinite;
-}
-
-@media (max-width: 860px) {
-  .hiw-steps {
+@media (max-width: 768px) {
+  .hiw-steps-grid {
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 32px;
   }
-  .hiw-arrow { transform: rotate(90deg); width: auto; height: 40px; }
-  .hiw-step { width: 100%; }
+  .hiw-steps-grid::before {
+    display: none;
+  }
+  .hiw-connector-icon {
+    display: none;
+  }
+  .hiw-step-card {
+    max-width: 100%;
+  }
 }

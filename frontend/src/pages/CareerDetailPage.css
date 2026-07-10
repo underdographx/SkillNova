@@ -3,7 +3,9 @@
    ============================== */
 .career-detail-page {
   min-height: 100vh;
-  padding-bottom: 100px;
+  padding-top: 88px; /* Offset for fixed navbar */
+  display: flex;
+  flex-direction: column;
 }
 
 /* === TOP BAR === */
@@ -99,6 +101,7 @@
   grid-template-columns: 280px 1fr;
   gap: 40px;
   margin-top: 40px;
+  margin-bottom: 100px;
   align-items: start;
 }
 
@@ -113,20 +116,26 @@
 
 .career-nav-link {
   display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
   padding: 12px 16px;
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition);
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 .career-nav-link:hover {
   background: rgba(255,255,255,0.03);
   color: var(--text);
 }
 .career-nav-link.active {
-  background: var(--primary-dim);
+  background: rgba(255, 0, 127, 0.1);
   color: var(--primary);
   font-weight: 600;
   border-left: 3px solid var(--primary);

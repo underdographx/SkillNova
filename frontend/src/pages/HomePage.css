@@ -1,30 +1,191 @@
-/* ==============================
-   HOME PAGE (Vertical Layout)
-   ============================== */
 .home-page {
-  background-color: var(--bg);
+  position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Reverting back to sequential full-width sections for a neater row-wise layout */
-.home-section {
-  padding: 80px 0;
-  border-bottom: 1px solid var(--border);
+.home-dashboard-section {
+  position: relative;
+  padding: 20px 0 80px;
 }
 
-.home-section-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* Spin animation for loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
-.home-section-title {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 12px;
+
+/* ---- Dashboard Layout ---- */
+.dashboard-2col-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
 }
-.home-section-sub {
+
+/* ---- Dashboard Columns ---- */
+.dashboard-col {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  min-height: 500px;
+}
+
+.dashboard-col-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.dashboard-col-header h3 {
   font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.dashboard-col-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---- Empty State ---- */
+.empty-state-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100% - 60px);
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+/* ---- Career Detail Pane ---- */
+.career-detail-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-header-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(123, 47, 247, 0.1);
+  color: var(--secondary-light);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.match-badge {
+  font-size: 11px;
+  background: transparent;
+  color: var(--primary-light);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  font-weight: 600;
+}
+
+/* ---- Detail Sections ---- */
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-section h4 {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-section h4 .icon {
+  color: var(--secondary-light);
+}
+
+.detail-section p, .detail-section ul {
+  font-size: 13px;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.detail-section ul {
+  padding-left: 20px;
+}
+
+.detail-section ul li {
+  margin-bottom: 4px;
+}
+
+/* ---- Skill Pills ---- */
+.skills-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+}
+
+/* ---- Salary ---- */
+.salary-display {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.salary-display .muted {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* ---- Utilities ---- */
+.w-full {
+  width: 100%;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1200px) {
+  .dashboard-2col-layout {
+    grid-template-columns: 1fr;
+  }
 }

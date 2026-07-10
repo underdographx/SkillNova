@@ -1,113 +1,112 @@
-/* ==============================
-   TOP RECOMMENDATIONS (Wide Mode)
-   ============================== */
-.rec-panel-container {
+.compact-rec-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
-/* === RECOMMENDATION CARDS === */
-.rec-cards-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.rec-panel-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
+.compact-rec-card {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  animation: slideUp 0.4s ease both;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-}
-.rec-panel-card:hover {
-  border-color: var(--primary-border);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
-}
-.rec-panel-card.top-match {
-  border-color: var(--primary-border);
-  background: linear-gradient(135deg, rgba(255, 42, 122, 0.05) 0%, var(--card) 100%);
-}
-
-.rec-panel-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--bg-deep);
+  gap: 16px;
+  background: var(--card-2);
   border: 1px solid var(--border);
+  padding: 16px;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.rec-panel-card.top-match .rec-panel-icon {
+
+.compact-rec-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-strong);
+}
+
+.compact-rec-card.active {
   border-color: var(--primary);
   background: var(--primary-dim);
 }
 
-.rec-panel-main {
-  flex: 1;
-  min-width: 0;
+.rec-card-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--secondary-light);
+  border-radius: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-}
-
-.rec-panel-name {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.rec-panel-meta {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-.rec-panel-meta strong {
-  color: var(--primary);
-}
-
-.rec-panel-score {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
   flex-shrink: 0;
 }
 
-.rec-panel-score-val {
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--primary);
+.rec-card-content {
+  flex: 1;
+}
+
+.rec-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.rec-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.top-match-badge {
+  font-size: 10px;
+  background: var(--primary-dim);
+  color: var(--primary-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 800;
+  border: 1px solid rgba(233, 30, 140, 0.3);
+}
+
+.rec-card-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.rec-card-score strong {
+  font-size: 16px;
+  color: var(--primary-light);
+  font-weight: 800;
   line-height: 1;
 }
 
-.rec-panel-score-lbl {
+.rec-card-score span {
   font-size: 11px;
-  text-transform: uppercase;
   color: var(--text-muted);
-  font-weight: 700;
-  margin-top: 4px;
-  letter-spacing: 0.05em;
 }
 
-@media (max-width: 900px) {
-  .rec-cards-list {
-    grid-template-columns: 1fr;
-  }
+.rec-card-skills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.skills-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.skills-row span {
+  font-size: 11px;
+  color: var(--text);
+  font-weight: 500;
 }

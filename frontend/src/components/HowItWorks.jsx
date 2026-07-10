@@ -1,90 +1,92 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./HowItWorks.css";
 
 const steps = [
   {
-    number: "1",
-    title: "Select Skills",
-    desc: "Choose the skills you know from our comprehensive database",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-      </svg>
-    ),
+    num: 1,
+    title: "Select Your Skills",
+    desc: "Choose the skills you have",
+    connectorIcon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+    )
   },
   {
-    number: "2",
+    num: 2,
     title: "AI Matching",
-    desc: "Our AI analyzes and intelligently matches your skills",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 16h4c1.1 0 2-1 2-2V6c0-1.1-.9-2-2-2H2"></path>
-        <path d="M22 16h-4c-1.1 0-2-1-2-2V6c0-1.1.9-2 2-2h4"></path>
-        <path d="M12 2v20"></path>
-        <path d="M6 10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2"></path>
-        <path d="M8 14h8"></path>
-      </svg>
-    ),
+    desc: "Our AI analyzes and matches your skills",
+    connectorIcon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+    )
   },
   {
-    number: "3",
+    num: 3,
     title: "Similarity Score",
-    desc: "Calculate weighted similarity with career profiles",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"></line>
-        <line x1="12" y1="20" x2="12" y2="4"></line>
-        <line x1="6" y1="20" x2="6" y2="14"></line>
-      </svg>
-    ),
+    desc: "Calculate similarity with career profiles",
+    connectorIcon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    )
   },
   {
-    number: "4",
-    title: "Career Recommendation",
-    desc: "Get top career recommendations matched to your profile",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-        <path d="M4 22h16"></path>
-        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-      </svg>
-    ),
-  },
+    num: 4,
+    title: "Best Careers",
+    desc: "Get top career recommendations"
+  }
 ];
 
-const HowItWorks = () => (
-  <section className="hiw-section" id="how-it-works">
-    <div className="section-container">
-      <div className="hiw-header">
-        <h2 className="hiw-title">How It Works</h2>
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+};
+
+const HowItWorks = () => {
+  return (
+    <section className="hiw-section" id="how-it-works">
+      <div className="section-container">
+        <motion.div 
+          className="hiw-container-box"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="hiw-title">How It Works</h2>
+          
+          <motion.div 
+            className="hiw-steps-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {steps.map((step, index) => (
+              <React.Fragment key={step.num}>
+                <motion.div className="hiw-step-card" variants={itemVariants}>
+                  <div className="hiw-step-num">{step.num}</div>
+                  <h3 className="hiw-step-title">{step.title}</h3>
+                  <p className="hiw-step-desc">{step.desc}</p>
+                </motion.div>
+                
+                {step.connectorIcon && (
+                  <motion.div className="hiw-connector-icon" variants={itemVariants}>
+                    {step.connectorIcon}
+                  </motion.div>
+                )}
+              </React.Fragment>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
-      <div className="hiw-steps">
-        {steps.map((step, i) => (
-          <React.Fragment key={i}>
-            <div className="hiw-step">
-              <div className="hiw-step-number">{step.number}</div>
-              <div className="hiw-step-icon-wrap">{step.icon}</div>
-              <div className="hiw-step-content">
-                <div className="hiw-step-title">{step.title}</div>
-                <div className="hiw-step-desc">{step.desc}</div>
-              </div>
-            </div>
-            {i < steps.length - 1 && (
-              <div className="hiw-arrow">
-                <svg className="hiw-arrow-svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
-                  <path d="M0 10 H20 M16 4 L22 10 L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default HowItWorks;

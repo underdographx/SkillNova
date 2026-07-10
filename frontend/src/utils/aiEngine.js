@@ -31,7 +31,6 @@ export const calculateWeightedSimilarity = (selectedSkills, careerSkills) => {
   
   const normalize = (s) => s.toLowerCase().trim();
   const selectedNorm = selectedSkills.map(normalize);
-  const careerNorm = careerSkills.map(normalize);
 
   let totalWeightPossible = 0;
   let earnedWeight = 0;

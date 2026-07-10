@@ -1,0 +1,8 @@
+.developer-page {
+  min-height: 100vh;
+  padding-top: 24px;
+}
+
+.developer-page .about-section {
+  padding-top: 112px;
+}

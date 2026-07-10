@@ -416,7 +416,7 @@ export const careerList = [
       { step: "Advanced QA", desc: "API testing, performance testing, CI/CD integration." }
     ],
     resources: [
-      { name: "TestAutomationUniversity", url: "https://testautomationu.applitools.com", icon: "✅" }
+      { name: "TestAutomationUniversity", url: "https://testautomationu.applitools.com", icon: "🎓" }
     ]
   },
   {
