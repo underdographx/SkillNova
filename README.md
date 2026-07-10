@@ -282,7 +282,7 @@ Computer Engineering Student
 - Artificial Intelligence
 - Web Development
 - UI/UX Design
-- Frontend Development
+- Fullstack Development
 
 **GitHub**
 https://github.com/underdographx
