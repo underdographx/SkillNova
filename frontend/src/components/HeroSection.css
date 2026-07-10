@@ -98,23 +98,7 @@
   align-items: center;
 }
 
-/* Edge-fading overlay — matches the dark bg exactly */
-.hero-image-container::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: 
-    /* Left fade — shifted to be much tighter */
-    linear-gradient(to right, var(--bg) 0%, transparent 12%),
-    /* Right fade */
-    linear-gradient(to left, var(--bg) 0%, transparent 10%),
-    /* Top fade */
-    linear-gradient(to bottom, var(--bg) 0%, transparent 10%),
-    /* Bottom fade */
-    linear-gradient(to top, var(--bg) 0%, transparent 10%);
-  pointer-events: none;
-  z-index: 2;
-}
+/* Removed the linear overlay — we are using mix-blend-mode and mask directly on the image now */
 
 .hero-3d-image {
   width: 100%;
@@ -122,7 +106,18 @@
   display: block;
   object-fit: contain;
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: brightness(1.0) contrast(1.0);
+  
+  /* Make the black background of the image completely transparent */
+  mix-blend-mode: screen;
+  
+  /* Make it look subtle and less harsh/contrasty */
+  opacity: 0.88;
+  filter: brightness(0.95) contrast(1.05) drop-shadow(0 0 40px rgba(233, 30, 140, 0.15));
+  
+  /* Smoothly dissolve all outer borders */
+  mask-image: radial-gradient(ellipse 80% 80% at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
+  
   position: relative;
   z-index: 1;
 }
